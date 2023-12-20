@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TurboWarp Embed Generator</title>
+    <script>
+        function generateEmbed() {
+            // Get user input
+            var name = document.getElementById('username').value;
+            var gameId = document.getElementById('gameId').value;
+
+            // Construct the URL
+            var embedUrl = `https://turbowarp.org/${gameId}/embed?username=${name}`;
+
+            // Open a popup window
+            window.open(embedUrl, 'TurboWarp Embed', 'width=100,height=1000');
+        }
+    </script>
+</head>
+<body>
+
+    <h1>TurboWarp Embed Generator</h1>
+
+    <form onsubmit="event.preventDefault(); generateEmbed();">
+        <label for="username">Enter your name:</label>
+        <input type="text" id="username" required>
+        <br>
+        <label for="gameId">Enter the game ID:</label>
+        <input type="text" id="gameId" required>
+        <br>
+        <button type="submit">Generate Embed</button>
+    </form>
+
+</body>
+</html>
