@@ -12,7 +12,7 @@
             var gameId = urlParams.get('gameId');
 
             // Construct the URL
-            var embedUrl = `https://turbowarp.org/${gameId}/embed?username=${name}`;
+            var embedUrl = `https://turbowarp.org/${gameId}/embed?username=${name}&autoplay`;
 
             // Open a popup window
             window.open(embedUrl, 'TurboWarp Embed', 'width=1200,height=900');
