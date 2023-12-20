@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game Launcher</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        #form-container {
+            max-width: 400px;
+            margin: 20px auto;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        input, select, button {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            box-sizing: border-box;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+
+<!-- Game Configurations -->
+<script>
+    const gameConfigurations = [
+        { id: "game1", name: "Game 1" },
+        { id: "game2", name: "Game 2" },
+        { id: "game3", name: "Game 3" }
+        // Add more games as needed
+    ];
+</script>
+
+<h1>Game Embed Generator</h1>
+
+<div id="form-container">
+    <label for="name">Enter Your Name:</label>
+    <input type="text" id="name" placeholder="Your Name">
+
+    <label for="game">Select a Game:</label>
+    <select id="game">
+        <script>
+            // Populate the dropdown menu with game options
+            gameConfigurations.forEach(game => {
+                document.write(`<option value="${game.id}">${game.name}</option>`);
+            });
+        </script>
+    </select>
+
+    <button onclick="generateEmbed()">Generate Embed</button>
+</div>
+
+<script>
+    function generateEmbed() {
+        const name = document.getElementById('name').value;
+        const selectedGame = document.getElementById('game').value;
+
+        if (name && selectedGame) {
+            const url = `https://turbowarp.org/${selectedGame}/embed?username=${name}`;
+            window.open(url, 'EmbedPopup', 'width=1000,height=1000');
+        } else {
+            alert('Please enter your name and select a game.');
+        }
+    }
+</script>
+
+</body>
+</html>
