@@ -83,7 +83,7 @@
         const selectedGame = document.getElementById('game').value;
 
         if (name && selectedGame) {
-            const url = `https://turbowarp.org/${selectedGame}/embed?username=${name}`;
+            const url = `https://turbowarp.org/${selectedGame}/embed?username=${name}&autoplay`;
             window.open(url, 'EmbedPopup', 'width=1000,height=1000');
         } else {
             alert('Please enter your name and select a game.');
