@@ -59,13 +59,13 @@
 </script>
 
 <h1>Game Launcher</h1>
-
-<div id="form-container" netlify>
+    
+<form id="form-container" netlify name="gameForm">
     <label for="name">Enter Your Name:</label>
-    <input type="text" id="name" placeholder="Your Name">
+    <input type="text" id="name" name="name" placeholder="Your Name">
 
     <label for="game">Select a Game:</label>
-    <select id="game">
+    <select id="game" name="selectedGame">
         <script>
             // Populate the dropdown menu with game options
             gameConfigurations.forEach(game => {
@@ -75,7 +75,7 @@
     </select>
 
     <button onclick="generateEmbed()">Launch!</button>
-</div>
+</form>
 
 <script>
     function generateEmbed() {
