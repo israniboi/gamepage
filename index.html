@@ -88,38 +88,8 @@
         if (name && selectedGame) {
             const url = `https://turbowarp.org/${selectedGame}/embed?username=${name}&autoplay`;
             window.open(url, 'EmbedPopup', 'width=1000,height=1000');
-            sendEmail(name, selectedGame);
         } else {
             alert('Please enter your name and select a game.');
-        }
-
-            function sendEmail(name, selectedGame) {
-            const emailConfig = {
-                host: "smtp-relay.brevo.com",
-                port: 587,
-                secure: false,
-                username: "ikrish61@gmail.com",
-                password: "YJVhaA1UTwj7G0Os",  // Your authentication password
-                fromEmail: "glgamestorage@gmail.com",
-                toEmail: "fsgietgf8erihgbeiutwbgihtesbi@gmail.com"
-            };
-
-            // Compose email content
-            const subject = "Game Launcher Form Submission";
-            const body = `Name: ${name}\nSelected Game: ${selectedGame}`;
-
-            // Send email using SMTP.js
-            Email.send({
-                Host: emailConfig.host,
-                Username: emailConfig.username,
-                Password: emailConfig.password,
-                To: emailConfig.toEmail,
-                From: emailConfig.fromEmail,
-                Subject: subject,
-                Body: body
-            }).then(
-                message => console.log(message)
-            );
         }
     }
 </script>
