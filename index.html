@@ -80,18 +80,7 @@
     <button onclick="generateEmbed()">Launch!</button>
 </form>
 
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-  // Get the current date
-  var currentDate = new Date();
-  
-  // Format the date as YYYY-MM-DD (you can modify the format as needed)
-  var formattedDate = currentDate.toISOString().slice(0,10);
-  
-  // Update the form name with the formatted date
-  document.getElementById('form-container').name = 'gameForm-' + formattedDate;
-});
-</script>
+
 <script>
     function generateEmbed() {
         const name = document.getElementById('name').value;
