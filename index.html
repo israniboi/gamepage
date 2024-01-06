@@ -70,12 +70,19 @@ function updateFormName() {
 
   // Set the form name to the formatted date
   document.getElementById('form-container').setAttribute('name', 'gameForm_' + formattedDate);
-}
+    
+    // Get the target element by its ID
+    var targetElement = document.getElementById("targetElement");
+    
+    // Set the content of the target element with the formatted date
+    targetElement.innerHTML = formattedDate;
+    }
+    
 </script>
 
 <h1>Game Launcher</h1>
     
-<form id="form-container" action="/" method="POST" data-netlify="true" name=formattedDate onsubmit="updateFormName()">
+<form id="form-container" action="/" method="POST" data-netlify="true" name="targetElement" >
     <label for="name">Enter Your Name:</label>
     <input type="text" id="name" name="name" placeholder="Your Name">
 
