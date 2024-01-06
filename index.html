@@ -63,7 +63,7 @@
 
 <h1>Game Launcher</h1>
     
-<form id="form-container" action="/" method="POST" data-netlify="true" name="gameForm">
+<form id="form-container" action="/" method="POST" data-netlify="true" name="" onsubmit="updateFormName()">
     <label for="name">Enter Your Name:</label>
     <input type="text" id="name" name="name" placeholder="Your Name">
 
@@ -81,6 +81,18 @@
 </form>
 
 
+<script>
+function updateFormName() {
+  // Get the current date
+  var currentDate = new Date();
+  
+  // Format the date as YYYY-MM-DD
+  var formattedDate = currentDate.toISOString().split('T')[0];
+
+  // Set the form name to the formatted date
+  document.getElementById('form-container').setAttribute('name', 'gameForm_' + formattedDate);
+}
+</script>
 <script>
     function generateEmbed() {
         const name = document.getElementById('name').value;
