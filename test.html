@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dynamic Form</title>
+</head>
+<body>
+
+<form id="form-container" action="/" method="POST" data-netlify="true" name="gameForm">
+  <!-- Your form fields go here -->
+  <label for="dynamicField">Dynamic Field:</label>
+  <input type="text" id="dynamicField" name="dynamicField">
+</form>
+
+<script>
+  // Get the form element
+  const form = document.getElementById('form-container');
+
+  // Set the form name to the current date
+  form.name = 'gameForm_' + getCurrentDate();
+
+  // Add an event listener to the form field for dynamic updates
+  const dynamicField = document.getElementById('dynamicField');
+  dynamicField.addEventListener('input', updateFormName);
+
+  function updateFormName() {
+    // Update the form name with the value of the dynamic field
+    form.name = 'gameForm_' + dynamicField.value;
+  }
+
+  function getCurrentDate() {
+    const today = new Date();
+    const year = today.getFullYear();
+    const month = String(today.getMonth() + 1).padStart(2, '0');
+    const day = String(today.getDate()).padStart(2, '0');
+    return `${year}${month}${day}`;
+  }
+</script>
+
+</body>
+</html>
