@@ -60,6 +60,18 @@
         { id: "943016786", name: "Placeholder" }
     ];
 </script>
+<script>
+function updateFormName() {
+  // Get the current date
+  var currentDate = new Date();
+  
+  // Format the date as YYYY-MM-DD
+  var formattedDate = currentDate.toISOString().split('T')[0];
+
+  // Set the form name to the formatted date
+  document.getElementById('form-container').setAttribute('name', 'gameForm_' + formattedDate);
+}
+</script>
 
 <h1>Game Launcher</h1>
     
@@ -81,18 +93,7 @@
 </form>
 
 
-<script>
-function updateFormName() {
-  // Get the current date
-  var currentDate = new Date();
-  
-  // Format the date as YYYY-MM-DD
-  var formattedDate = currentDate.toISOString().split('T')[0];
 
-  // Set the form name to the formatted date
-  document.getElementById('form-container').setAttribute('name', 'gameForm_' + formattedDate);
-}
-</script>
 <script>
     function generateEmbed() {
         const name = document.getElementById('name').value;
