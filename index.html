@@ -62,25 +62,7 @@
         { id: "943016786", name: "Placeholder" }
     ];
 </script>
-<script>
-function updateFormName() {
-  // Get the current date
-  var currentDate = new Date();
-  
-  // Format the date as YYYY-MM-DD
-  var formattedDate = currentDate.toISOString().split('T')[0];
 
-  // Set the form name to the formatted date
-  document.getElementById('form-container').setAttribute('name', 'gameForm_' + formattedDate);
-    
-    // Get the target element by its ID
-    var targetElement = document.getElementById("targetElement");
-    
-    // Set the content of the target element with the formatted date
-    targetElement.innerHTML = formattedDate;
-    }
-    
-</script>
 
 <h1>Game Launcher</h1>
     
@@ -101,25 +83,34 @@ function updateFormName() {
     <button onclick="generateEmbed()">Launch!</button>
 </form>
 
+
 <script>
     // Function to get URL parameters
     function getParameterByName(name, url) {
         if (!url) url = window.location.href;
-        name = name.replace(/[\[\]]/g, '\\$&');
-        var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
+        name = name.replace(/[\[\]]/g, "\\$&");
+        var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
             results = regex.exec(url);
         if (!results) return null;
         if (!results[2]) return '';
-        return decodeURIComponent(results[2].replace(/\+/g, ' '));
+        return decodeURIComponent(results[2].replace(/\+/g, " "));
     }
 
-    // Auto-fill the form field with the "name" parameter from the URL
+    // Autofill form fields with URL parameters
     document.addEventListener('DOMContentLoaded', function () {
-        var nameInput = document.getElementById('name');
+        var nameField = document.getElementById('name');
+        var selectedGameField = document.getElementById('selectedGame');
+
+        // Autofill 'name' field
         var nameParam = getParameterByName('name');
-        
-        if (nameParam !== null && nameParam !== '') {
-            nameInput.value = nameParam;
+        if (nameParam !== null) {
+            nameField.value = nameParam;
+        }
+
+        // Autofill 'selectedGame' field
+        var selectedGameParam = getParameterByName('selectedGame');
+        if (selectedGameParam !== null) {
+            selectedGameField.value = selectedGameParam;
         }
     });
 </script>
