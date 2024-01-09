@@ -101,23 +101,6 @@ function updateFormName() {
     <button onclick="generateEmbed()">Launch!</button>
 </form>
 
-  <script>
-    // Check if there is a value in local storage for the 'name' field
-    if (localStorage.getItem('name')) {
-      // If yes, set the input field value to the stored value
-      document.getElementById('name').value = localStorage.getItem('name');
-    }
-
-    // Add an event listener to the input field to update local storage on change
-    document.getElementById('name').addEventListener('input', function() {
-      localStorage.setItem('name', this.value);
-    });
-
-    // Clear the local storage when the form is submitted (optional)
-    document.querySelector('form').addEventListener('submit', function() {
-      localStorage.removeItem('name');
-    });
-  </script>
 
 <script>
     function generateEmbed() {
