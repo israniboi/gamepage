@@ -21,7 +21,7 @@
         button {
             padding: 10px 20px;
             font-size: 18px;
-            background-color: #4CAF50;
+            background-color: #EE4B2B;
             color: #fff;
             border: none;
             border-radius: 5px;
@@ -43,7 +43,7 @@
     </style>
 </head>
 <body>
-    <button onclick="location.href='./index.html'">Unlocked</button>
+    <button onclick="location.href='./index.html'">Lock</button>
     <div style="margin-top: 20px;">
         <p>Check out the <a href="https://github.com/krishisrani61/Game-Launcher" target="_blank">GitHub repository</a>.</p>
         <p>For usage, visit <a href="https://vercel.com/israniboi/~/usage" target="_blank">Vercel Usage</a>.</p>
